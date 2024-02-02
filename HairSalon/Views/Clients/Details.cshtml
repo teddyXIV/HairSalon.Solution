@@ -1,0 +1,24 @@
+@model HairSalon.Models.Client
+
+<h2>Client Info</h2>
+<hr />
+
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayNameFor(model => model.Stylist): @Html.DisplayFor(model => model.Stylist.Name)</h3>
+
+@using (Html.BeginForm("Edit", "Clients", FormMethod.Get))
+{
+    @Html.Hidden("id", Model.StylistId)
+    <input type="submit" value="Edit client info" />
+}
+
+@using (Html.BeginForm("Delete", "Clients", FormMethod.Get))
+{
+    @Html.Hidden("id", Model.ClientId)
+    <input type="submit" value="Remove client" />
+}
+
+@using (Html.BeginForm("Index", "Clients", FormMethod.Get))
+{
+    <input type="submit" value="Back to client list" />
+}

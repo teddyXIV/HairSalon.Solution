@@ -41,4 +41,10 @@ public class ClientsController : Controller
         _db.SaveChanges();
         return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+        Client client = _db.Clients.Include(client => client.Stylist).FirstOrDefault(client => client.ClientId == id);
+        return View(client);
+    }
 }
