@@ -27,6 +27,12 @@ else
     <input type="submit" value="Edit stylist info" />
 }
 
+@using (Html.BeginForm("Delete", "Stylists", FormMethod.Get))
+{
+    @Html.Hidden("id", Model.StylistId)
+    <input type="submit" value="Remove stylist" />
+}
+
 @using (Html.BeginForm("Index", "Stylists", FormMethod.Get))
 {
     <input type="submit" value="Back to stylist list" />
