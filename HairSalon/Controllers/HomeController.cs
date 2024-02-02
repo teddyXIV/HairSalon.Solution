@@ -8,6 +8,7 @@ namespace Project.Controllers
         [HttpGet("/")]
         public ActionResult Index()
         {
+            ViewBag.PageTitle = "Eau Claire's Salon";
             return View();
         }
 

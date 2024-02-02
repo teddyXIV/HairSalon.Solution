@@ -1,7 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using HairSalon.Models;
 
-
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
