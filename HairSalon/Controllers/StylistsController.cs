@@ -21,4 +21,12 @@ public class StylistsController : Controller
     {
         return View();
     }
+
+    [HttpPost]
+    public ActionResult Create(Stylist stylist)
+    {
+        _db.Stylists.Add(stylist);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+    }
 }
