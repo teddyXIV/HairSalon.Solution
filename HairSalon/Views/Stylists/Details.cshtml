@@ -21,7 +21,12 @@ else
     </ul>
 }
 
+@using (Html.BeginForm("Edit", "Stylists", FormMethod.Get))
+{
+    <input type="submit" value="Edit stylist info" />
+}
+
 @using (Html.BeginForm("Index", "Stylists", FormMethod.Get))
 {
-    <input type="submit" value="Back to stylist list">
+    <input type="submit" value="Back to stylist list" />
 }
