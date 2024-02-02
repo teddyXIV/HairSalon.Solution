@@ -23,6 +23,7 @@ else
 
 @using (Html.BeginForm("Edit", "Stylists", FormMethod.Get))
 {
+    @Html.Hidden("id", Model.StylistId)
     <input type="submit" value="Edit stylist info" />
 }
 
