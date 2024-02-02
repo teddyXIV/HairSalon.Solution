@@ -29,4 +29,13 @@ public class StylistsController : Controller
         _db.SaveChanges();
         return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+        Stylist thisStylist = _db.Stylists
+            .Include(stylist => stylist.Clients)
+            .FirstOrDefault(stylist => stylist.StylistId == id);
+        return View(thisStylist);
+
+    }
 }
