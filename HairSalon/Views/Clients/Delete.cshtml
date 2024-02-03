@@ -1,0 +1,14 @@
+@model HairSalon.Models.Client
+
+<h2>Are you sure you want to remove @Model.Name?</h2>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Yes, remove this client" />
+}
+
+@using (Html.BeginForm("Details", "Clients", FormMethod.Get))
+{
+    @Html.Hidden("id", Model.ClientId)
+    <input type="submit" value="Nevermind" />
+}

@@ -62,4 +62,19 @@ public class ClientsController : Controller
         _db.SaveChanges();
         return RedirectToAction("Index");
     }
+
+    public ActionResult Delete(int id)
+    {
+        Client client = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+        return View(client);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult ConfirmDelete(int id)
+    {
+        Client client = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+        _db.Clients.Remove(client);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+    }
 }
