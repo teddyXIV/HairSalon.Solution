@@ -1,0 +1,8 @@
+@using (Html.BeginForm("Index", "Search", FormMethod.Get))
+{
+    @Html.RadioButton("searchType", "stylists", true, new { id = "stylistRadio" }) <label for="stylistRadio">Stylist</label>
+    @Html.RadioButton("searchType", "client", new { id = "clientRadio" }) <label for="clientRadio">Client</label>
+    @Html.TextBox("searchTerm")
+
+    <input type="submit" value="Search">
+}

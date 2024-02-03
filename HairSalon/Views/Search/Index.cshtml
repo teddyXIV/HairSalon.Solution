@@ -1,0 +1,33 @@
+@using HairSalon.Models;
+
+<h2>Search results</h2>
+
+
+@if (Model.GetType() == typeof(List<Client>))
+{
+    @if (Model.Count == 0)
+    {
+        <h3>No clients match the search term.</h3>
+    }
+
+    <ul>
+        @foreach (Client client in Model)
+        {
+            <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId }) | @client.Stylist.Name</li>
+        }
+    </ul>
+}
+else
+{
+    @if (Model.Count == 0)
+    {
+        <h3>No stylists match the search term.</h3>
+    }
+
+    <ul>
+        @foreach (Stylist stylist in Model)
+        {
+            <li>@Html.ActionLink($"{stylist.Name}", "Details", "Stylists", new { id = stylist.StylistId })</li>
+        }
+    </ul>
+}
