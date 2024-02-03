@@ -14,11 +14,13 @@ public class StylistsController : Controller
     public ActionResult Index()
     {
         List<Stylist> model = _db.Stylists.ToList();
+        ViewBag.PageTitle = "All stylists";
         return View(model);
     }
 
     public ActionResult Create()
     {
+        ViewBag.PageTitle = "Add new stylist";
         return View();
     }
 
@@ -35,6 +37,7 @@ public class StylistsController : Controller
         Stylist thisStylist = _db.Stylists
             .Include(stylist => stylist.Clients)
             .FirstOrDefault(stylist => stylist.StylistId == id);
+        ViewBag.PageTitle = "Stylist details";
         return View(thisStylist);
 
     }
@@ -42,6 +45,7 @@ public class StylistsController : Controller
     public ActionResult Edit(int id)
     {
         Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+        ViewBag.PageTitle = "Edit stylist info";
         return View(thisStylist);
     }
 
@@ -56,6 +60,7 @@ public class StylistsController : Controller
     public ActionResult Delete(int id)
     {
         Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+        ViewBag.PageTitle = "Remove stylist";
         return View(thisStylist);
     }
 

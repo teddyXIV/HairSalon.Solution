@@ -19,13 +19,14 @@ public class ClientsController : Controller
         List<Client> model = _db.Clients
             .Include(client => client.Stylist)
             .ToList();
-        ViewBag.PageTitle = "View all clients";
+        ViewBag.PageTitle = "All clients";
         return View(model);
     }
 
     public ActionResult Create()
     {
         ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+        ViewBag.PageTitle = "Add a client";
         return View();
     }
 
@@ -45,6 +46,7 @@ public class ClientsController : Controller
     public ActionResult Details(int id)
     {
         Client client = _db.Clients.Include(client => client.Stylist).FirstOrDefault(client => client.ClientId == id);
+        ViewBag.PageTitle = "Client details";
         return View(client);
     }
 
@@ -52,6 +54,7 @@ public class ClientsController : Controller
     {
         Client client = _db.Clients.FirstOrDefault(client => client.ClientId == id);
         ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
+        ViewBag.PageTitle = "Edit client info";
         return View(client);
     }
 
@@ -66,6 +69,7 @@ public class ClientsController : Controller
     public ActionResult Delete(int id)
     {
         Client client = _db.Clients.FirstOrDefault(client => client.ClientId == id);
+        ViewBag.PageTitle = "Remove client";
         return View(client);
     }
 
