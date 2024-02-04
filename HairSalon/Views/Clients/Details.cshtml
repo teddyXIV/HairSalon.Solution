@@ -12,6 +12,12 @@
     <input type="submit" value="Edit client info" />
 }
 
+@using (Html.BeginForm("Create", "Appointments", FormMethod.Get))
+{
+    @Html.Hidden("id", Model.ClientId)
+    <input type="submit" value="Schedule an appointment" />
+}
+
 @using (Html.BeginForm("Delete", "Clients", FormMethod.Get))
 {
     @Html.Hidden("id", Model.ClientId)

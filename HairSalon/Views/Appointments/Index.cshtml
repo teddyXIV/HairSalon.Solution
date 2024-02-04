@@ -1,0 +1,25 @@
+@using HairSalon.Models
+
+<h1>Appointments</h1>
+
+@if (Model.Count == 0)
+{
+    <h3>No appointments have been scheduled.</h3>
+}
+
+<ul>
+    @foreach (Appointment appointment in Model)
+    {
+        <li>@Html.ActionLink($"{appointment.Date.ToString("yyyy-MM-dd")} at {appointment.Time}", "Details", "Clients", new { id = appointment.AppointmentId }) | @appointment.Client.Name with @appointment.Client.Stylist.Name</li>
+    }
+</ul>
+
+@using (Html.BeginForm("Create", "Appointments", FormMethod.Get))
+{
+    <input type="submit" value="Schedule an appointment">
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Get))
+{
+    <input type="submit" value="Home">
+}

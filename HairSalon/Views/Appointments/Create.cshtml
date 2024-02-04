@@ -1,0 +1,22 @@
+@model HairSalon.Models.Appointment
+
+<h4>Add an appointment</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Date)
+    @Html.TextBoxFor(model => model.Date)
+
+    @Html.LabelFor(model => model.Time)
+    @Html.TextBoxFor(model => model.Time)
+
+    @Html.LabelFor(model => model.Client)
+    @Html.DropDownList("ClientId")
+    @* @Html.HiddenFor(model => model.Client, new { @Value = Model.ClientId }) *@
+    <input type="submit" value="Schedule appointment" />
+}
+
+@using (Html.BeginForm("Index", "Clients", FormMethod.Get))
+{
+    <input type="submit" value="View all clients">
+}
