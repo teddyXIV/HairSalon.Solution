@@ -1,22 +1,20 @@
 @model HairSalon.Models.Appointment
 
 <h4>Add an appointment</h4>
+<p>You must have at least one client before you can schedule an appointment.</p>
+<p>Go to @Html.ActionLink("this page", "Create", "Clients") to add a client.</p>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Date)
-    @Html.TextBoxFor(model => model.Date)
+    <div class="data-form">
+        @Html.LabelFor(model => model.Date)
+        @Html.TextBoxFor(model => model.Date, new { type = "date" })
 
-    @Html.LabelFor(model => model.Time)
-    @Html.TextBoxFor(model => model.Time)
+        @Html.LabelFor(model => model.Time)
+        @Html.TextBoxFor(model => model.Time, new { type = "time" })
 
-    @Html.LabelFor(model => model.Client)
-    @Html.DropDownList("ClientId")
-    @* @Html.HiddenFor(model => model.Client, new { @Value = Model.ClientId }) *@
-    <input class="button" type="submit" value="Schedule appointment" />
-}
-
-@using (Html.BeginForm("Index", "Clients", FormMethod.Get))
-{
-    <input class="button" type="submit" value="View all clients">
+        @Html.LabelFor(model => model.Client)
+        @Html.DropDownList("ClientId")
+        <input class="button" type="submit" value="Schedule appointment" />
+    </div>
 }

@@ -6,13 +6,15 @@
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.ClientId)
+    <div class="data-form">
+        @Html.HiddenFor(model => model.ClientId)
 
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
 
-    @Html.LabelFor(model => model.Stylist)
-    @Html.DropDownList("StylistId")
+        @Html.LabelFor(model => model.Stylist)
+        @Html.DropDownList("StylistId")
 
-    <input class="button" type="submit" value="Update" />
+        <input class="button" type="submit" value="Update" />
+    </div>
 }

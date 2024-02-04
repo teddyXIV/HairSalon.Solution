@@ -3,14 +3,17 @@
 <h4>Add a new stlyist</h4>
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Name)
-    @Html.TextBoxFor(model => model.Name)
-    @Html.LabelFor(model => model.Specialty)
-    @Html.TextBoxFor(model => model.Specialty)
-    <input type="submit" value="Add stylist" />
+    <div class="data-form">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name)
+        @Html.LabelFor(model => model.Specialty)
+        @Html.TextBoxFor(model => model.Specialty)
+        <input class="button" type="submit" value="Add stylist" />
+    </div>
 }
-
-@using (Html.BeginForm("Index", "Stylists", FormMethod.Get))
+</div>
+@* @using (Html.BeginForm("Index", "Stylists", FormMethod.Get))
 {
-    <input type="submit" value="Show all stylists">
-}
+<input class="button" type="submit" value="Show all stylists">
+} *@
+</div>

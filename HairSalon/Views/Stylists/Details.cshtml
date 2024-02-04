@@ -2,7 +2,8 @@
 @using HairSalon.Models
 
 <h2>Stylist Info</h2>
-</hr>
+<hr />
+
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h4>@Html.DisplayNameFor(model => model.Specialty): @Html.DisplayFor(model => model.Specialty)</h4>
 
@@ -21,19 +22,16 @@ else
     </ul>
 }
 
-@using (Html.BeginForm("Edit", "Stylists", FormMethod.Get))
-{
-    @Html.Hidden("id", Model.StylistId)
-    <input type="submit" value="Edit stylist info" />
-}
+<div class="button-group">
+    @using (Html.BeginForm("Edit", "Stylists", FormMethod.Get))
+    {
+        @Html.Hidden("id", Model.StylistId)
+        <input class="button" type="submit" value="Edit stylist info" />
+    }
 
-@using (Html.BeginForm("Delete", "Stylists", FormMethod.Get))
-{
-    @Html.Hidden("id", Model.StylistId)
-    <input type="submit" value="Remove stylist" />
-}
-
-@using (Html.BeginForm("Index", "Stylists", FormMethod.Get))
-{
-    <input type="submit" value="Back to stylist list" />
-}
+    @using (Html.BeginForm("Delete", "Stylists", FormMethod.Get))
+    {
+        @Html.Hidden("id", Model.StylistId)
+        <input class="button" type="submit" value="Remove stylist" />
+    }
+</div>

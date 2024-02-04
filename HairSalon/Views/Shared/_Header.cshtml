@@ -6,6 +6,23 @@
     </div>
     <div class="title">
         <h1>Eau Claire's</h1>
+        <h4>Stylist and Client Management Tool</h4>
+        <div class="nav-buttons">
+            @using (Html.BeginForm("Index", "Stylists", FormMethod.Get))
+            {
+                <input class="button" type="submit" value="View stylists">
+            }
+
+            @using (Html.BeginForm("Index", "Clients", FormMethod.Get))
+            {
+                <input class="button" type="submit" value="View clients">
+            }
+
+            @using (Html.BeginForm("Index", "Appointments", FormMethod.Get))
+            {
+                <input class="button" type="submit" value="View appointments">
+            }
+        </div>
     </div>
 
     <div class="search-bar">

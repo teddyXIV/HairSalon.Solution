@@ -1,0 +1,9 @@
+@model HairSalon.Models.Appointment
+
+<h2>Are you sure you want to cancel this appointment?</h2>
+<h3>@ViewBag.Details.Date.ToString("yyyy-MM-dd") at @ViewBag.Details.Time.ToString(@"hh\:mm") with @ViewBag.Client.Name</h3>
+
+@using (Html.BeginForm())
+{
+    <input class="button" type="submit" value="Yes, cancel appointment" />
+}

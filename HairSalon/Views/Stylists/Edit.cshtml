@@ -5,19 +5,21 @@
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.StylistId)
+    <div class="data-form">
+        @Html.HiddenFor(model => model.StylistId)
 
-    @Html.LabelFor(model => model.Name)
-    @Html.EditorFor(model => model.Name)
+        @Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
 
 
-    @Html.LabelFor(model => model.Specialty)
-    @Html.EditorFor(model => model.Specialty)
+        @Html.LabelFor(model => model.Specialty)
+        @Html.EditorFor(model => model.Specialty)
 
-    <input type="submit" value="Save" />
+        <input class="button" type="submit" value="Save" />
+    </div>
 }
 
 @using (Html.BeginForm("Index", "Stylists", FormMethod.Get))
 {
-    <input type="submit" value="Back to stylist list">
+    <input class="button" type="submit" value="Back to stylist list">
 }
