@@ -25,22 +25,22 @@ else
 @using (Html.BeginForm("Edit", "Clients", FormMethod.Get))
 {
     @Html.Hidden("id", Model.StylistId)
-    <input type="submit" value="Edit client info" />
+    <input class="button" type="submit" value="Edit client info" />
 }
 
 @using (Html.BeginForm("Create", "Appointments", FormMethod.Get))
 {
     @Html.Hidden("id", Model.ClientId)
-    <input type="submit" value="Schedule an appointment" />
+    <input class="button" type="submit" value="Schedule an appointment" />
 }
 
 @using (Html.BeginForm("Delete", "Clients", FormMethod.Get))
 {
     @Html.Hidden("id", Model.ClientId)
-    <input type="submit" value="Remove client" />
+    <input class="button" type="submit" value="Remove client" />
 }
 
 @using (Html.BeginForm("Index", "Clients", FormMethod.Get))
 {
-    <input type="submit" value="Back to client list" />
+    <input class="button" type="submit" value="Back to client list" />
 }

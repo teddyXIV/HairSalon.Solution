@@ -13,10 +13,10 @@
     @Html.LabelFor(model => model.Client)
     @Html.DropDownList("ClientId")
     @* @Html.HiddenFor(model => model.Client, new { @Value = Model.ClientId }) *@
-    <input type="submit" value="Schedule appointment" />
+    <input class="button" type="submit" value="Schedule appointment" />
 }
 
 @using (Html.BeginForm("Index", "Clients", FormMethod.Get))
 {
-    <input type="submit" value="View all clients">
+    <input class="button" type="submit" value="View all clients">
 }

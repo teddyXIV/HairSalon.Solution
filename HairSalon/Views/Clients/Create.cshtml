@@ -13,10 +13,10 @@
     @Html.LabelFor(model => model.Stylist)
     @Html.DropDownList("StylistId")
 
-    <input type="submit" value="Add client" />
+    <input class="button" type="submit" value="Add client" />
 }
 
 @using (Html.BeginForm("Index", "Clients", FormMethod.Get))
 {
-    <input type="submit" value="View all clients">
+    <input class="button" type="submit" value="View all clients">
 }

@@ -10,16 +10,16 @@
 <ul>
     @foreach (Appointment appointment in Model)
     {
-        <li>@Html.ActionLink($"{appointment.Date.ToString("yyyy-MM-dd")} at {appointment.Time}", "Details", "Clients", new { id = appointment.Client.ClientId }) | @appointment.Client.Name with @appointment.Client.Stylist.Name</li>
+        <li>@Html.ActionLink($"{appointment.Date.ToString("yyyy-MM-dd")} at {appointment.Time.ToString(@"hh\:mm")}", "Details", "Clients", new { id = appointment.Client.ClientId }) | @appointment.Client.Name with @appointment.Client.Stylist.Name</li>
     }
 </ul>
 
 @using (Html.BeginForm("Create", "Appointments", FormMethod.Get))
 {
-    <input type="submit" value="Schedule an appointment">
+    <input class="button" type="submit" value="Schedule an appointment">
 }
 
 @using (Html.BeginForm("Index", "Home", FormMethod.Get))
 {
-    <input type="submit" value="Home">
+    <input class="button" type="submit" value="Home">
 }

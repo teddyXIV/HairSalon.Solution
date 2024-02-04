@@ -4,11 +4,11 @@
 
 @using (Html.BeginForm())
 {
-    <input type="submit" value="Yes, remove this client" />
+    <input class="button" type="submit" value="Yes, remove this client" />
 }
 
 @using (Html.BeginForm("Details", "Clients", FormMethod.Get))
 {
     @Html.Hidden("id", Model.ClientId)
-    <input type="submit" value="Nevermind" />
+    <input class="button" type="submit" value="Nevermind" />
 }
