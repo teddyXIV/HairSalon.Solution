@@ -45,7 +45,10 @@ public class ClientsController : Controller
 
     public ActionResult Details(int id)
     {
-        Client client = _db.Clients.Include(client => client.Stylist).FirstOrDefault(client => client.ClientId == id);
+        Client client = _db.Clients
+            .Include(client => client.Stylist)
+            .Include(client => client.Appointments)
+            .FirstOrDefault(client => client.ClientId == id);
         ViewBag.PageTitle = "Client details";
         return View(client);
     }

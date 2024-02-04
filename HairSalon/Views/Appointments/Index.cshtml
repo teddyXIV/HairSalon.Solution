@@ -10,7 +10,7 @@
 <ul>
     @foreach (Appointment appointment in Model)
     {
-        <li>@Html.ActionLink($"{appointment.Date.ToString("yyyy-MM-dd")} at {appointment.Time}", "Details", "Clients", new { id = appointment.AppointmentId }) | @appointment.Client.Name with @appointment.Client.Stylist.Name</li>
+        <li>@Html.ActionLink($"{appointment.Date.ToString("yyyy-MM-dd")} at {appointment.Time}", "Details", "Clients", new { id = appointment.Client.ClientId }) | @appointment.Client.Name with @appointment.Client.Stylist.Name</li>
     }
 </ul>
 
