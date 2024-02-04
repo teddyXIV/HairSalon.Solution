@@ -53,7 +53,20 @@ img:hover {
     border-radius: 4px;
 }
 
+.schedule-button {
+    background-color: #392A16;
+    color: #f6f5f3;
+    border-radius: 4px;
+    width: 52%;
+    align-self: center;
+    margin: 5px;
+}
+
 .button:hover {
+    transform: scale(1.04);
+}
+
+.schedule-button:hover {
     transform: scale(1.04);
 }
 

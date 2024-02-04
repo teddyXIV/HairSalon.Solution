@@ -7,3 +7,7 @@
 {
     <input class="button" type="submit" value="Yes, cancel appointment" />
 }
+@using (Html.BeginForm("Index", "Appointments", FormMethod.Get))
+{
+    <input class="button" type="submit" value="Nevermind" />
+}

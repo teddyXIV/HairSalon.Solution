@@ -15,11 +15,6 @@
         @Html.LabelFor(model => model.Specialty)
         @Html.EditorFor(model => model.Specialty)
 
-        <input class="button" type="submit" value="Save" />
+        <input class="button" type="submit" value="Update" />
     </div>
-}
-
-@using (Html.BeginForm("Index", "Stylists", FormMethod.Get))
-{
-    <input class="button" type="submit" value="Back to stylist list">
 }
