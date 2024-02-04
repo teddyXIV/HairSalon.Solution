@@ -38,6 +38,15 @@ public class AppointmentsController : Controller
         {
             return RedirectToAction("create");
         }
+
+        List<Appointment> conflictCheck = _db.Appointments
+            .Where(a => a.ClientId == appointment.ClientId)
+            .ToList();
+
+        if (conflictCheck.Any(a => a.Time == appointment.Time) && conflictCheck.Any(a => a.Date == appointment.Date))
+        {
+            return RedirectToAction("create");
+        }
         _db.Appointments.Add(appointment);
         _db.SaveChanges();
         return RedirectToAction("index");
