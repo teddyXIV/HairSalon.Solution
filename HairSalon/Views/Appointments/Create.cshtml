@@ -8,10 +8,10 @@
 {
     <div class="data-form">
         @Html.LabelFor(model => model.Date)
-        @Html.TextBoxFor(model => model.Date, new { type = "date" })
+        @Html.TextBoxFor(model => model.Date, new { type = "date", required = "required" })
 
         @Html.LabelFor(model => model.Time)
-        @Html.TextBoxFor(model => model.Time, new { type = "time" })
+        @Html.TextBoxFor(model => model.Time, new { type = "time", required = "required" })
 
         @Html.LabelFor(model => model.Client)
         @Html.DropDownList("ClientId")

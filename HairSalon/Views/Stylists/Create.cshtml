@@ -5,9 +5,9 @@
 {
     <div class="data-form">
         @Html.LabelFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { type = "date", required = "required" })
         @Html.LabelFor(model => model.Specialty)
-        @Html.TextBoxFor(model => model.Specialty)
+        @Html.TextBoxFor(model => model.Specialty, new { type = "date", required = "required" })
         <input class="button" type="submit" value="Add stylist" />
     </div>
 }

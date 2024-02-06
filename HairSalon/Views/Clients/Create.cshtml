@@ -9,7 +9,7 @@
 {
     <div class="data-form">
         @Html.LabelFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { type = "date", required = "required" })
 
         @Html.LabelFor(model => model.Stylist)
         @Html.DropDownList("StylistId")
