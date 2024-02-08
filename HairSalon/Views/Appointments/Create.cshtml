@@ -1,8 +1,12 @@
 @model HairSalon.Models.Appointment
 
 <h4>Add an appointment</h4>
-<p>You must have at least one client before you can schedule an appointment.</p>
-<p>Go to @Html.ActionLink("this page", "Create", "Clients") to add a client.</p>
+
+@if (ViewBag.ClientId == null)
+{
+    <p>You must have at least one client before you can schedule an appointment.</p>
+    <p>Go to @Html.ActionLink("this page", "Create", "Clients") to add a client.</p>
+}
 
 @using (Html.BeginForm())
 {
