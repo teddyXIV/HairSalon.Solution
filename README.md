@@ -19,14 +19,26 @@ This application allows the user to manage the salon's stylists and clients thro
 * Adding clients to stylists
 * Editing client details
 * Deleting clients
+* Search for a specific client or stylist
+* Schedule appointments for clients
 
 ## Setup/Installation Requirements
 
 * Clone this repository.
-* Use the `teddy_peterschmidt.sql` file located at to the top level of the repo to create a new database in MySQL Workbench with the name `teddy_peterschmidt`.
+* If needed, download and configure MySQL Workbench for your operating system by following the instructions in [this lesson.](https://full-time.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql)
+* Launch MySQL Workbench and open your local instance so that the Navigator window is visible and complete the following steps:
+  * Select the *Administration* tab from the bottom of the *Navigator* window.
+  * Select *Data Import/Restore*.
+  * In *Import Options*, select *Import from Self-Contained File*.
+  * Navigate to the `teddy_peterschmidt.sql` file located at the top level of the repo.
+  * Under *Default Schema to be Imported To*, select the *New* button.
+  * Name the database `teddy_peterschmidt`.
+  * Click *Ok*.
+  * Navigate to the *Import Progress* tab and click *Start*.
+  * Select the *Schema* tab from the bottom of the Navigator window and select *Refresh All* to view the new database. 
 * Navigate to the production directory HairSalon.
 * Within the production directory "HairSalon", create a new file called `appsettings.json`.
-* Within `appsettings.json`, put in the following code,  replace the `uid` and `pwd` values with your own username and password for MySQL.
+* Within `appsettings.json`, put in the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL.
 ```json 
 {
   "ConnectionStrings": {

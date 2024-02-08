@@ -1,15 +1,19 @@
+@using HairSalon.Models
 @model HairSalon.Models.Client
 
 <h4>Add a new client</h4>
 
-<p>You must have at least one stylist on record before you can take on clients.</p>
-<p>Go to @Html.ActionLink("this page", "Create", "Stylists") to add a stylist.</p>
+@if (ViewBag.StylistId == null)
+{
+    <p>You must have at least one stylist on record before you can take on clients.</p>
+    <p>Go to @Html.ActionLink("this page", "Create", "Stylists") to add a stylist.</p>
+}
 
 @using (Html.BeginForm())
 {
     <div class="data-form">
         @Html.LabelFor(model => model.Name)
-        @Html.TextBoxFor(model => model.Name, new { type = "date", required = "required" })
+        @Html.TextBoxFor(model => model.Name, new { required = "required" })
 
         @Html.LabelFor(model => model.Stylist)
         @Html.DropDownList("StylistId")
